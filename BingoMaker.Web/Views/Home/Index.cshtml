@@ -13,7 +13,7 @@
         @Html.LabelFor(model => model.Font)
     </div>
     <div class="editor-field">
-        @Html.EditorFor(model => model.Font)
+        @Html.DropDownListFor(model => model.Font, Model.Fonts)
         @Html.ValidationMessageFor(model => model.Font)
     </div>
 

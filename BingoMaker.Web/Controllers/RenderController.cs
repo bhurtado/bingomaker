@@ -9,12 +9,10 @@ namespace BingoMaker.Web.Controllers
 {
     public class RenderController : Controller
     {
-        //
-        // GET: /Render/
-
         public ActionResult Index(BingoSettings settings)
         {
             settings.WordList = settings.WordListBlob.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Select(w => w.Trim()).ToArray();
+
             var pageCount = settings.CardCount / 4;
             var pages = new StringBuilder();
             for (int i = 0; i < pageCount; i++)

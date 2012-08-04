@@ -27,5 +27,7 @@ namespace BingoMaker.Web.Models
         {
             this.Font = "Arial";
         }
+
+        public IEnumerable<System.Web.Mvc.SelectListItem> Fonts { get; set; }
     }
 }
