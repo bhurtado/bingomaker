@@ -1,0 +1,88 @@
+﻿@model BingoMaker.Web.Models.RenderModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bingo Cards</title>
+	<style type='text/css'>
+		h1, h2
+		{
+			margin:0;
+		}
+		
+		h1 { font-size:24px; }
+		h2 { font-size:18px; }
+	
+		.wordList
+		{
+			font-size:22px;
+			text-align:left;
+		}
+	
+		.wordList .word
+		{
+			float: left;
+			margin-right: 50px;
+			width: 250px;
+		}
+	
+		table
+		{
+			border-collapse:collapse;
+		}
+	
+		.card table
+		{
+			border:solid 1px black;
+			border-width: 1px 1px 0 0;
+			font-size:12px;
+			margin:20px auto 60px auto;
+		}
+	
+		.card table td
+		{
+			border:solid 1px black;
+			border-width: 0 0 1px 1px;
+			padding:3px;
+			height:55px;
+			width:55px;
+		}
+	
+		.cards
+		{
+			width:100%;		
+		}
+	
+		.cards > tr > td
+		{
+			width:50%;
+		}
+	
+		.page
+		{
+			font-family:'@Model.Font';
+			text-align:center;
+		}
+
+		@@media print
+		{
+			.page
+			{
+				page-break-before: always;
+			}
+			
+			.page:first-child
+			{
+				page-break-before: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+    @Model.WordListHtml
+    @Model.CardsHtml
+</body>
+</html>
