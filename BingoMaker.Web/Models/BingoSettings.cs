@@ -23,11 +23,12 @@ namespace BingoMaker.Web.Models
 
         public int CardCount { get; set; }
 
+        public IEnumerable<System.Web.Mvc.SelectListItem> Fonts { get; set; }
+
         public BingoSettings()
         {
             this.Font = "Arial";
+            this.FreeText = "BINGO";
         }
-
-        public IEnumerable<System.Web.Mvc.SelectListItem> Fonts { get; set; }
     }
 }
