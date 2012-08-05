@@ -11,7 +11,7 @@ namespace BingoMaker.Web.Controllers
     {
         public ActionResult Index(BingoSettings settings)
         {
-            settings.WordList = settings.WordListBlob.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Select(w => w.Trim()).ToArray();
+            settings.WordList = settings.WordListBlob.Split(new[] { '\r', '\n', ',', ';' }, StringSplitOptions.RemoveEmptyEntries).Select(w => w.Trim()).ToArray();
 
             var pageCount = settings.CardCount / 4;
             var pages = new StringBuilder();

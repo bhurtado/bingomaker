@@ -21,6 +21,7 @@ namespace BingoMaker.Web.Models
 
         public string[] WordList { get; set; }
 
+        [Range(1, int.MaxValue)]
         public int CardCount { get; set; }
 
         public IEnumerable<System.Web.Mvc.SelectListItem> Fonts { get; set; }
@@ -29,6 +30,7 @@ namespace BingoMaker.Web.Models
         {
             this.Font = "Arial";
             this.FreeText = "BINGO";
+            this.CardCount = 12;
         }
     }
 }

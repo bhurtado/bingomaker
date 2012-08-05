@@ -8,8 +8,10 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <div id="content">
     @RenderBody()
-
+    </div>
+    <div id="footer">&copy;@DateTime.Now.Year <a href="http://ianobermiller.com" title="Ian Obermiller's website">Ian Obermiller</a></div>
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>
