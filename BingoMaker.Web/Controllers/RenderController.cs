@@ -13,6 +13,11 @@ namespace BingoMaker.Web.Controllers
         {
             settings.WordList = settings.WordListBlob.Split(new[] { '\r', '\n', ',', ';' }, StringSplitOptions.RemoveEmptyEntries).Select(w => w.Trim()).ToArray();
 
+            while (settings.WordList.Length < 25)
+            {
+                settings.WordList = settings.WordList.Concat(settings.WordList).ToArray();
+            }
+
             var pageCount = settings.CardCount / 4;
             var pages = new StringBuilder();
             for (int i = 0; i < pageCount; i++)
